@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 115vh;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    animation: fadeIn 2ms ease-in;
+    max-width: 100%;
+    box-shadow: 4px 8px 28px orangered;
+    border-radius: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center items horizontally */
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 500px;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.card h1 {
+    color: #ff6f61;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    animation: zoomIn 1s ease;
+    margin-top: 1% !important;
+    margin-bottom: 0px !important;
+}
+
+.card p {
+    color: #333;
+    font-size: 1.2em;
+    animation: fadeInUp 1s ease;
+}
+
+.card .photo {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 3px 4px 18px orangered;
+    animation: fadeIn 2ms ease;
+}
+
+.card .cake {
+    max-width: 68%;
+    height: auto;
+    /* Ensure the height adjusts properly */
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 3px 4px 17px orangered;
+    animation: fadeIn 2s ease;
+}
+
+.balloon-button {
+    margin-top: 20px;
+    padding: 10px 40px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-family: 'Dancing Script', cursive;
+    animation: fadeInUp 2s ease;
+}
+
+.balloon-button:hover {
+    background-color: #ff3d3d;
+}
+
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+    font-family: 'Dancing Script', cursive;
+    animation: fadeInUp 3s ease;
+}
+
+.balloons-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 42px;
+    height: 50px;
+    background: red;
+    border-radius: 75% 75% 70% 70%;
+    animation: floatUp 5s 4 ease-in-out;
+}
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: #e8d20f !important;
+}
+
+.balloon:after {
+    content: "▲";
+    text-align: center;
+    display: block;
+    position: absolute;
+    color: inherit;
+    top: 42px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-800px) rotate(0deg);
+    }
+}
+
+.confetti-canvas {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
